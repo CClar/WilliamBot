@@ -75,9 +75,6 @@ async def splitBill(ctx):
     with open('./data.json') as f:
         data = json.load(f)
 
-    if not data:
-        await ctx.send('First run !bill')
-        return
     totals = defaultdict(lambda: {'total': Decimal(0), 'items': []})
     itemsNotSplit = []
     for i in range(len(data['messageIds'])):
